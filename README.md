@@ -6,7 +6,7 @@
 
 已认可案例为 **ding_detail_half_03**：恢复Before完整细节，只将正面浮雕起伏减半；底厚、轮廓、循环边和UV保持原样，不增加几何平滑或高度分层。具体数值和验收记录见 `WORKFLOW_SUMMARY.md`、`VALIDATION.json` 和 `cases/ding/accepted/`。
 
-## 在另一台电脑使用
+## 使用方法
 
 安装 Git、Git LFS，并使用有权限的 GitHub 账号登录：
 

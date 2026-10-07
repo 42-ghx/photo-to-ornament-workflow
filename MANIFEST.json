@@ -212,8 +212,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 1749,
-      "sha256": "bf3b8a8e2777d3288914a912b7a9c240ce788b2e7eee9de794f632e063d47f1a"
+      "bytes": 1737,
+      "sha256": "d86229a4b947d5fbff1d0b9aa0eb1561994ee585bfb5dbba877ce94e35620903"
     },
     {
       "file": "run_case.ps1",
