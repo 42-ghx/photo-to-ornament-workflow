@@ -6,6 +6,11 @@
   "credentials_included": false,
   "files": [
     {
+      "file": ".agents/skills/photo-to-ornament/SKILL.md",
+      "bytes": 4854,
+      "sha256": "38e41412195a0cd3d2a05fe7d888e8a2182df73854b6ecf14b7d2abf9798472d"
+    },
+    {
       "file": ".agents/skills/photo-to-ornament/agents/openai.yaml",
       "bytes": 341,
       "sha256": "fab248b039a714bc59f7663f823f9aeff8dc14db0f4f805bd1f695d63a8319bc"
@@ -56,11 +61,6 @@
       "sha256": "36880d917c34dafaeda30921b535242633dff987c63c8ceafb569e01e1841b9a"
     },
     {
-      "file": ".agents/skills/photo-to-ornament/SKILL.md",
-      "bytes": 4854,
-      "sha256": "38e41412195a0cd3d2a05fe7d888e8a2182df73854b6ecf14b7d2abf9798472d"
-    },
-    {
       "file": ".gitattributes",
       "bytes": 211,
       "sha256": "282cadfb4041bc7d6f55434da977119c82a8b5466d0c10f983cab77f2a5ff078"
@@ -76,9 +76,69 @@
       "sha256": "24515b34a78dce769f94d1c0a81d36657a5c9edbea83a035d1e25d5dd09e24e7"
     },
     {
+      "file": "CLOUD_SETUP.md",
+      "bytes": 2956,
+      "sha256": "7fe01867a30f8ef168c5734dbfbe37b27f2375f6f88e8969a03a3e496ad0d339"
+    },
+    {
+      "file": "MIGRATION.md",
+      "bytes": 6101,
+      "sha256": "48ebbafd897a47858aeda2d948fd45e386c1cc899280191c593f90a962b6d749"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2172,
+      "sha256": "a4b91cccde2f7befc9ce6b0997c0fe85aac7502810ce201a2423a52981fdf412"
+    },
+    {
+      "file": "START_HERE.md",
+      "bytes": 3402,
+      "sha256": "414a6515de101ea0b05d6b3ebfe1507c0ad3c27617352eb06118f21fc8fbb57e"
+    },
+    {
+      "file": "VALIDATION.json",
+      "bytes": 1005,
+      "sha256": "ad47c3f6b6a9344a07341cbcc90b5b857d46c295f8113a4d7c0d49843d5e2fcb"
+    },
+    {
+      "file": "WORKFLOW_SUMMARY.md",
+      "bytes": 2807,
+      "sha256": "2e0f04e9cbe10dba824ca3ff4cc817722e72fcbe041078b1381caa2529aadeb8"
+    },
+    {
       "file": "assets/Edge Damage Modifer.blend",
       "bytes": 1308520,
       "sha256": "d37071fd1f99ecbf2662ddbee98d0c63b071cb0cf10f1f555e812b7abf80537f"
+    },
+    {
+      "file": "canvas/README.md",
+      "bytes": 1732,
+      "sha256": "d70c8bf1d8000db7f4e14d5fa2423b377a3fe6f5e9c518037853ba407d7ff3a1"
+    },
+    {
+      "file": "canvas/index.html",
+      "bytes": 42708,
+      "sha256": "1543620ec30ef3b8cd2bc777090370d46ff1f531c5d1c90721e1a60462560d1d"
+    },
+    {
+      "file": "canvas/overview.svg",
+      "bytes": 6651,
+      "sha256": "afdaab3fd30d9240bce6c58d17f1ba6c257b8b59f54288493e792061ec52fff5"
+    },
+    {
+      "file": "canvas/photo-to-ornament.canvas",
+      "bytes": 15945,
+      "sha256": "32e7e4b02a67f849c6fbc8405da416dc4dc1fbf7135b397fc53b41e193d1627e"
+    },
+    {
+      "file": "canvas/template.html",
+      "bytes": 27493,
+      "sha256": "620aa1e878a50ccb056b3f9b2760397d24564a4d52506493750fe5c264247009"
+    },
+    {
+      "file": "canvas/workflow.json",
+      "bytes": 21561,
+      "sha256": "91e745340a9748f802fe4e5eaf8b555c44bf159e7f9dc119bf582e016d505dc0"
     },
     {
       "file": "cases/ding/accepted/01_restored_detail.png",
@@ -89,6 +149,11 @@
       "file": "cases/ding/accepted/02_low_side.png",
       "bytes": 1290295,
       "sha256": "1f4bdb9cd1c2e63db0ff0ae12cb6b48d4d2b60bb231c50b647832125e1203de5"
+    },
+    {
+      "file": "cases/ding/accepted/UV_layout_4096.svg",
+      "bytes": 1199058,
+      "sha256": "31515f1f9228c50f1f1d30419ffc4a3b0b1724c35ead4578dfdd02b276bf27f5"
     },
     {
       "file": "cases/ding/accepted/detail_checks.json",
@@ -126,6 +191,11 @@
       "sha256": "9dcd95d90d03a429600229635794c93fea9768a7a372986db2a464f47876c3a7"
     },
     {
+      "file": "cases/ding/accepted/reproduced/UV_layout_4096.svg",
+      "bytes": 1199058,
+      "sha256": "31515f1f9228c50f1f1d30419ffc4a3b0b1724c35ead4578dfdd02b276bf27f5"
+    },
+    {
       "file": "cases/ding/accepted/reproduced/fbx_uv_checks.json",
       "bytes": 373,
       "sha256": "2bdeda5a5a3f05d62e1e7f7eb60b76e2c1e2e7bb6bfbfcbe6da1d8f194308f1e"
@@ -141,11 +211,6 @@
       "sha256": "baab246045bc56b1c8cbde6d394b5eeffb924f44c8342d8770f6c7f1b874501e"
     },
     {
-      "file": "cases/ding/accepted/reproduced/UV_layout_4096.svg",
-      "bytes": 1199058,
-      "sha256": "31515f1f9228c50f1f1d30419ffc4a3b0b1724c35ead4578dfdd02b276bf27f5"
-    },
-    {
       "file": "cases/ding/accepted/side_loops.png",
       "bytes": 2565173,
       "sha256": "e3d14e2d8d5600b6e5ab81f9a676133e31d1d726d6e21e2f04f9ad6ca9137286"
@@ -154,11 +219,6 @@
       "file": "cases/ding/accepted/uv_checker.png",
       "bytes": 2511700,
       "sha256": "13778290781a0fe3ba80648197988ea5cfc8315b0027383301d593e22ca40eb2"
-    },
-    {
-      "file": "cases/ding/accepted/UV_layout_4096.svg",
-      "bytes": 1199058,
-      "sha256": "31515f1f9228c50f1f1d30419ffc4a3b0b1724c35ead4578dfdd02b276bf27f5"
     },
     {
       "file": "cases/ding/maps/01_cutout.png",
@@ -201,21 +261,6 @@
       "sha256": "63b01f6463f792d8be849ef135e7c698c7ca76a9556bb245291a5f827e53d272"
     },
     {
-      "file": "CLOUD_SETUP.md",
-      "bytes": 2956,
-      "sha256": "7fe01867a30f8ef168c5734dbfbe37b27f2375f6f88e8969a03a3e496ad0d339"
-    },
-    {
-      "file": "MIGRATION.md",
-      "bytes": 6101,
-      "sha256": "48ebbafd897a47858aeda2d948fd45e386c1cc899280191c593f90a962b6d749"
-    },
-    {
-      "file": "README.md",
-      "bytes": 1737,
-      "sha256": "d86229a4b947d5fbff1d0b9aa0eb1561994ee585bfb5dbba877ce94e35620903"
-    },
-    {
       "file": "run_case.ps1",
       "bytes": 1570,
       "sha256": "e16d7f37cf1512dc0d6ed4c691cfdc7e4c5c3fff40cf223742e45422c8f1e915"
@@ -226,14 +271,14 @@
       "sha256": "8b33d0e0e88924ddfbb9b08c26928b71161e37ad2bf78e6ef50754892a05d69e"
     },
     {
-      "file": "setup/blender_addon.py",
-      "bytes": 175194,
-      "sha256": "f43469c8518c7021e0060e32cfe52e3beb126b0f62fbae7293106642a3ebda89"
-    },
-    {
       "file": "setup/BLENDER_MCP_LICENSE.txt",
       "bytes": 1071,
       "sha256": "049501fd54d27852507853a5b88094ca1c6ff97404418a5032f3310eecc9cde6"
+    },
+    {
+      "file": "setup/blender_addon.py",
+      "bytes": 175194,
+      "sha256": "f43469c8518c7021e0060e32cfe52e3beb126b0f62fbae7293106642a3ebda89"
     },
     {
       "file": "setup/blender_mcp_snapshot.json",
@@ -249,6 +294,11 @@
       "file": "setup/bootstrap_cloud.sh",
       "bytes": 2020,
       "sha256": "2fb2833a7e310045aa43658f643e1d20d5b193adb758604d9a1cc5d0fff92591"
+    },
+    {
+      "file": "setup/build_node_canvas.py",
+      "bytes": 6479,
+      "sha256": "daead207657e0973d7c393b123ad6a2f320c404443f99ae900dae3ab529524ed"
     },
     {
       "file": "setup/diagnose.py",
@@ -284,21 +334,6 @@
       "file": "setup/verify_manifest.py",
       "bytes": 1110,
       "sha256": "a6594135236ac252810c4ce103c981b6aa19ca5f46ac6ae991980bf3bd406694"
-    },
-    {
-      "file": "START_HERE.md",
-      "bytes": 3402,
-      "sha256": "414a6515de101ea0b05d6b3ebfe1507c0ad3c27617352eb06118f21fc8fbb57e"
-    },
-    {
-      "file": "VALIDATION.json",
-      "bytes": 1005,
-      "sha256": "ad47c3f6b6a9344a07341cbcc90b5b857d46c295f8113a4d7c0d49843d5e2fcb"
-    },
-    {
-      "file": "WORKFLOW_SUMMARY.md",
-      "bytes": 2807,
-      "sha256": "2e0f04e9cbe10dba824ca3ff4cc817722e72fcbe041078b1381caa2529aadeb8"
     }
   ]
 }

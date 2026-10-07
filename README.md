@@ -6,6 +6,14 @@
 
 已认可案例为 **ding_detail_half_03**：恢复Before完整细节，只将正面浮雕起伏减半；底厚、轮廓、循环边和UV保持原样，不增加几何平滑或高度分层。具体数值和验收记录见 `WORKFLOW_SUMMARY.md`、`VALIDATION.json` 和 `cases/ding/accepted/`。
 
+## 节点画布
+
+![照片转镂空纹样高模节点流程](canvas/overview.svg)
+
+克隆后直接在浏览器打开 `canvas/index.html`，可拖动节点、缩放、查看输入输出与命令、记录注释及导入／导出布局。画布用于整理流程，实际建模由现有脚本执行。
+
+[画布使用说明](canvas/README.md) · [HTML查看器](canvas/index.html) · [通用.canvas文件](canvas/photo-to-ornament.canvas)
+
 ## 使用方法
 
 安装 Git、Git LFS，并使用有权限的 GitHub 账号登录：

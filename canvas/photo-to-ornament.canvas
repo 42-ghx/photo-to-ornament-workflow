@@ -1,0 +1,392 @@
+{
+  "nodes": [
+    {
+      "id": "image-group",
+      "x": 12,
+      "y": 0,
+      "width": 1312,
+      "height": 412,
+      "type": "group",
+      "label": "01  照片与地图"
+    },
+    {
+      "id": "mesh-group",
+      "x": 12,
+      "y": 460,
+      "width": 1312,
+      "height": 252,
+      "type": "group",
+      "label": "02  高模、厚度与 UV"
+    },
+    {
+      "id": "delivery-group",
+      "x": 12,
+      "y": 754,
+      "width": 1312,
+      "height": 254,
+      "type": "group",
+      "label": "03  验证与交付"
+    },
+    {
+      "id": "future-group",
+      "x": 1370,
+      "y": 0,
+      "width": 280,
+      "height": 1008,
+      "type": "group",
+      "label": "扩展路线 · 尚需单独验收"
+    },
+    {
+      "id": "photo",
+      "x": 44,
+      "y": 128,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 原照片 / 任务定义\n\n选定纹样区域，确认尺寸与用途\n\n**状态：输入**\n\n输入：器物照片、尺寸、观看距离、背面要求\n\n输出：结构依据与本次制作范围\n\n- 本流程交付独立纹样浮雕，不等同于整件器物重建。\n- 鼎案例宽 1 m、观看 5 m；新素材另定参数。\n- 单张照片不能准确测出隐藏面或考古深度。\n\n案例宽度：1 m\n\n观看距离：5 m\n\n最终版本：ding_detail_half_03",
+      "color": "5"
+    },
+    {
+      "id": "cutout",
+      "x": 300,
+      "y": 128,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 透明抠图\n\n去除展台、背景和投影\n\n**状态：已验证**\n\n输入：原照片\n\n输出：透明背景参考 PNG\n\n- 保持可见结构、视角、真实开口与轮廓。\n- 使用当前任务实际可用的图像编辑工具。",
+      "color": "5"
+    },
+    {
+      "id": "delight",
+      "x": 556,
+      "y": 128,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 柔和去光照\n\n减弱反光与阴影，保留读形\n\n**状态：已验证**\n\n输入：抠图参考\n\n输出：弱光照结构参考 PNG\n\n- 不能将博物馆灯光、锈色或 AO 直接解释为深度。\n- 保留读形明暗，不宣称为测量反照率。",
+      "color": "5"
+    },
+    {
+      "id": "mask",
+      "x": 812,
+      "y": 58,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 材料遮罩\n\n白色实体 / 黑色外部与贯通孔\n\n**状态：已验证**\n\n输入：原照片 + 弱光照参考\n\n输出：03_material_mask.png\n\n- 遮罩只定义材料存在，不用来删除刻线、眼眶或凹槽。\n- 指定镂空是装饰重建选择，不声称照片本身存在这些贯通孔。\n- 保持完整轮廓、连接与必要支撑，不添加矩形背板。",
+      "color": "5"
+    },
+    {
+      "id": "height",
+      "x": 812,
+      "y": 246,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 连续高度图\n\n坡度、眼睛与刻线写入高度\n\n**状态：已验证**\n\n输入：照片结构 + 材料遮罩布局\n\n输出：04_height.png\n\n- 保留主次形体、连续坡度和刻线；降低光照残留与锈斑噪声。\n- 与遮罩共享画布，避免错位或把深凹槽误当镂空。\n- 不默认量化为 6 级平台或额外整面抹平。\n- 认可地图为 8 bit RGB 草稿；不称为测量值或原生 16 bit 深度。",
+      "color": "5"
+    },
+    {
+      "id": "map-check",
+      "x": 1068,
+      "y": 152,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 地图检查 / 条件验收\n\n对齐、完整性、刻线与孔洞语义\n\n**状态：已验证**\n\n输入：材料遮罩 + 连续高度图\n\n输出：可用于几何采样的认可地图\n\n- 检查眼睛等关键特征在参考观看距离可读。\n- 用户要求先看图时停在此处；已要求建模时直接继续。\n- 新素材按原图重新分析，不套用鼎的具体纹样形状。",
+      "color": "4"
+    },
+    {
+      "id": "highpoly",
+      "x": 44,
+      "y": 532,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 轮廓约束高模\n\n仅材料区域生成密集四边面\n\n**状态：已验证**\n\n输入：认可材料遮罩 + 连续高度\n\n输出：高密度正面、轮廓内底面\n\n- 轮廓约束三角化后细分为四边面；目标是静态高模采样。\n- 白区实体、黑区贯通；底面仅在材料足迹内封闭。\n- 保留认可 Before 的采样，不增加几何平滑。\n- 同一次 build_quad_uv.py 调用同时完成高模、侧壁和 UV。\n\n案例采样面积：6e-7 m²\n\nBefore 底厚：12.85 mm\n\nBefore 起伏：22.15 mm\n\n案例面数：2,958,074 四边面\n\n```sh\npython .agents/skills/photo-to-ornament/scripts/build_quad_uv.py --maps cases/ding/maps --out runs/ding/rebuilt_before --width-m 1 --base-m 0.01285 --relief-m 0.02215 --area 6e-7 --wall-layers 16\n```",
+      "color": "4"
+    },
+    {
+      "id": "walls",
+      "x": 300,
+      "y": 532,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 厚度循环边\n\n外轮廓与孔壁均为恒定 Z 环带\n\n**状态：已验证**\n\n输入：材料边界 + 基础厚度\n\n输出：平稳厚度侧壁与横向循环边\n\n- 侧壁不能跟着正面小起伏形成整条波浪。\n- 外轮廓和贯通孔的内壁都需要环带。\n- 当前方案保留厚度结构，不做再次体素化。\n\n厚度分层：16 层\n\n恒定高度位置：17 个\n\n贯通孔：13 处（本例）",
+      "color": "4"
+    },
+    {
+      "id": "uv",
+      "x": 556,
+      "y": 532,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 分区 UV\n\n正面 / 厚度环带 / 底面\n\n**状态：已验证**\n\n输入：完整四边面与循环边\n\n输出：UV_Main、UV 岛与接缝\n\n- 厚度按每条横向循环边分带，并添加纵向开口缝。\n- 正面、底面各自分区；所有岛打包到 0–1。\n- 正面采用平面投影，坡面仍有拉伸，不能称为无拉伸 UV。\n\nUV 岛：440（本例）\n\n参考分辨率：4096\n\n岛间距：4 px（4K）",
+      "color": "4"
+    },
+    {
+      "id": "relief",
+      "x": 812,
+      "y": 532,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 只调整浮雕强度\n\nBefore 原细节 × 0.5；底厚不变\n\n**状态：已验证**\n\n输入：认可 Before 数组\n\n输出：保留细节的最终浮雕\n\n- 新 Z = 底厚 + 0.5 ×（旧 Z − 底厚）。\n- 只改变正面 Z，保留 XY、侧壁、底面、面索引、UV 和接缝。\n- 始终从认可源版本计算，避免连续减半。\n- 不重新生成地图来完成简单强度调整。\n\n浮雕系数：0.5\n\n最终起伏：11.075 mm\n\n基础厚度：12.85 mm\n\n总高：23.925 mm\n\n```sh\npython .agents/skills/photo-to-ornament/scripts/scale_relief.py --source cases/ding/mesh_before --out runs/ding/mesh --factor 0.5\n```",
+      "color": "4"
+    },
+    {
+      "id": "geometry-check",
+      "x": 1068,
+      "y": 532,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 几何与 UV 检查\n\n轮廓、底厚、孔洞、细节与接缝\n\n**状态：已验证**\n\n输入：缩放后的独立高模\n\n输出：可交付的认可几何版本\n\n- 对比 Before：轮廓和细节完整，厚度不因浮雕减半而改变。\n- 封闭材料区域检查水密；开放背面按指定边界验收。\n- 本例 4 个材料连通体，不擅自添加桥梁。",
+      "color": "4"
+    },
+    {
+      "id": "export",
+      "x": 44,
+      "y": 826,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## FBX + Blender 工程\n\n独立模型、预览与验证记录\n\n**状态：已验证**\n\n输入：高模数组 + UV 数据\n\n输出：FBX、.blend、PNG 预览\n\n- 后台 Blender 构造实际几何并导出 FBX，不以贴图掩盖错误。\n- 导出和后续重导入检查在同一 build_scene.py 调用内完成。\n- 完整案例入口 run_case.py 会依序缩放、导出并核对返回结果。\n- blender 命令需已在 PATH 中可用；否则替换为本机或云端可执行文件的完整路径。\n\n```sh\nblender --factory-startup -b --python .agents/skills/photo-to-ornament/scripts/build_scene.py -- --source runs/ding/mesh --out runs/ding/result\n```",
+      "color": "4"
+    },
+    {
+      "id": "roundtrip",
+      "x": 300,
+      "y": 826,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## FBX 重导入核对\n\n坐标、面数、尺寸与 UV 一致\n\n**状态：已验证**\n\n输入：导出的 FBX\n\n输出：fbx_uv_checks.json + 预览\n\n- 只有实际回读通过才称为导出验收完成。\n- 已认可案例回读坐标、UV 与尺寸最大误差为 0。\n\n坐标误差：0 m\n\nUV 误差：0\n\n尺寸误差：0 m",
+      "color": "4"
+    },
+    {
+      "id": "blender",
+      "x": 556,
+      "y": 826,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## Blender 查看 / 交付\n\n本机连接与云端文件分开核实\n\n**状态：已验证**\n\n输入：认可 FBX / .blend\n\n输出：可查看、可使用的独立高模\n\n- 有实际 Blender MCP 连接才声称自动导入实时场景。\n- 云端后台输出不会自动连接公司电脑的 localhost。\n- 新电脑拉取 Git LFS 资产并按 MIGRATION.md 配置本机软件。\n\n```sh\npython run_case.py --blender \"替换为Blender可执行文件路径\"\n```",
+      "color": "4"
+    },
+    {
+      "id": "wear",
+      "x": 812,
+      "y": 826,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 可选 · 局部边缘磨损\n\n用户节点资产 + 局部权重\n\n**状态：未应用**\n\n输入：干净高模 + Edge Damage 资产\n\n输出：另存的程序化磨损副本\n\n- 当前认可鼎模型未添加此阶段磨损。\n- 需要 POINT 域 alpha_edge_weight 和 wear_z 权重。\n- 保护眼睛、刻线、循环边、孔洞和 UV；不默认再次体素化或整面模糊。\n- 用户有要求时执行，保留干净版。",
+      "color": "2"
+    },
+    {
+      "id": "wear-check",
+      "x": 1068,
+      "y": 826,
+      "width": 220,
+      "height": 136,
+      "type": "text",
+      "text": "## 磨损副本复验\n\n几何、孔洞、UV 与 FBX 再核对\n\n**状态：未应用**\n\n输入：局部磨损副本\n\n输出：单独的磨损 FBX 与 .blend\n\n- 检查磨损是否实际生效、是否损坏细节或循环边。\n- 根据背面要求检查水密或开放边界。\n- 导出后重新核对几何与 UV；不把干净版验收复用为磨损验收。",
+      "color": "2"
+    },
+    {
+      "id": "future-rodin",
+      "x": 1398,
+      "y": 58,
+      "width": 224,
+      "height": 140,
+      "type": "text",
+      "text": "## 整器 / 生物 / 盔甲\n\nRodin / Hyper3D 的独立生成路线\n\n**状态：待验收**\n\n输入：分部件参考与结构说明\n\n输出：需检查的完整 3D 模型\n\n- 当前浮雕路线不依赖 Rodin。\n- 生成质量、遮挡结构、拓扑与 UV 需单独验证。\n- API / OAuth 在对应执行环境授权，凭证不写进画布或 Git。",
+      "color": "6"
+    },
+    {
+      "id": "future-uv",
+      "x": 1398,
+      "y": 246,
+      "width": 224,
+      "height": 140,
+      "type": "text",
+      "text": "## 指定 UV 内生成纹样\n\n输入 UV 材料区域并约束布局\n\n**状态：待验收**\n\n输入：UV 遮罩 + 纹样照片\n\n输出：UV 内的材料遮罩与高度\n\n- 当前案例未提供 UV 模板，此分支尚未验收。\n- 需检查跨岛对齐、边缘留白与接缝连续性。",
+      "color": "6"
+    },
+    {
+      "id": "future-pbr",
+      "x": 1398,
+      "y": 434,
+      "width": 224,
+      "height": 140,
+      "type": "text",
+      "text": "## PBR / Substance Painter\n\n材质通道、烘焙与模板导出\n\n**状态：待验收**\n\n输入：模型、UV、材质参考\n\n输出：需验证的 PBR 通道与 Painter 工程\n\n- 整模型贴图和自动导入尚未固化。\n- 不能把去光照参考当作已完成 PBR 材质。",
+      "color": "6"
+    },
+    {
+      "id": "future-md",
+      "x": 1398,
+      "y": 622,
+      "width": 224,
+      "height": 140,
+      "type": "text",
+      "text": "## MD 工业纸样 / 布料\n\n可裁剪缝制纸样与真实模拟\n\n**状态：暂缓**\n\n输入：服装设计、人体与工艺\n\n输出：工业纸样与 MD 布料模拟\n\n- 用户已暂缓该路线，尚未实现与验收。\n- 图片褶皱编辑不能代替真实布料模拟。",
+      "color": "6"
+    },
+    {
+      "id": "future-hair",
+      "x": 1398,
+      "y": 810,
+      "width": 224,
+      "height": 140,
+      "type": "text",
+      "text": "## 毛发插片贴图 / Mesh\n\n毛束通道与插片布局\n\n**状态：待验收**\n\n输入：毛发参考、目标预算\n\n输出：插片贴图与插片 Mesh\n\n- 尚未固化，需单独定义透明、法线、颜色等通道与 Mesh 验收。",
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "fromNode": "photo",
+      "fromSide": "right",
+      "toNode": "cutout",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e02",
+      "fromNode": "cutout",
+      "fromSide": "right",
+      "toNode": "delight",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e03",
+      "fromNode": "delight",
+      "fromSide": "right",
+      "toNode": "mask",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e04",
+      "fromNode": "delight",
+      "fromSide": "right",
+      "toNode": "height",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e05",
+      "fromNode": "mask",
+      "fromSide": "right",
+      "toNode": "map-check",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e06",
+      "fromNode": "height",
+      "fromSide": "right",
+      "toNode": "map-check",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e07",
+      "fromNode": "map-check",
+      "fromSide": "bottom",
+      "toNode": "highpoly",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "认可地图"
+    },
+    {
+      "id": "e08",
+      "fromNode": "highpoly",
+      "fromSide": "right",
+      "toNode": "walls",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e09",
+      "fromNode": "walls",
+      "fromSide": "right",
+      "toNode": "uv",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e10",
+      "fromNode": "uv",
+      "fromSide": "right",
+      "toNode": "relief",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e11",
+      "fromNode": "relief",
+      "fromSide": "right",
+      "toNode": "geometry-check",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e12",
+      "fromNode": "geometry-check",
+      "fromSide": "bottom",
+      "toNode": "export",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "认可 UV 高模"
+    },
+    {
+      "id": "e13",
+      "fromNode": "export",
+      "fromSide": "right",
+      "toNode": "roundtrip",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e14",
+      "fromNode": "roundtrip",
+      "fromSide": "right",
+      "toNode": "blender",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e15",
+      "fromNode": "blender",
+      "fromSide": "right",
+      "toNode": "wear",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "按需"
+    },
+    {
+      "id": "e16",
+      "fromNode": "wear",
+      "fromSide": "right",
+      "toNode": "wear-check",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e17",
+      "fromNode": "mask",
+      "fromSide": "bottom",
+      "toNode": "height",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "共享布局"
+    }
+  ]
+}
