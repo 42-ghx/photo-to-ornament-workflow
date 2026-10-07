@@ -1,0 +1,11 @@
+# Copy only the required sections after inspecting existing settings.
+# Replace the executable path with the COMPANY PC path; do not replace config.toml.
+[mcp_servers.hyper3d]
+url = "https://api.hyper3d.com/api/mcp"
+
+[mcp_servers.blender]
+command = "C:/YOUR_PATH/BlenderMCP/venv/Scripts/blender-mcp.exe"
+startup_timeout_sec = 60
+tool_timeout_sec = 180
+
+# OAuth credentials are created on the new host by Authenticate / codex mcp login.

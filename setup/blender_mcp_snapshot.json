@@ -1,0 +1,25 @@
+{
+  "installed_server_package": "blender-mcp",
+  "installed_server_version": "1.9.1",
+  "addon_info": {
+    "name": "MCP for Blender",
+    "author": "BlenderMCP",
+    "version": [
+      1,
+      6
+    ],
+    "blender": [
+      3,
+      0,
+      0
+    ],
+    "location": "View3D > Sidebar > MCP for Blender",
+    "description": "Connect Blender to Claude via MCP",
+    "category": "Interface"
+  },
+  "addon_sha256": "f43469c8518c7021e0060e32cfe52e3beb126b0f62fbae7293106642a3ebda89",
+  "official_project": "https://github.com/ahujasid/mcp-for-blender",
+  "configuration_migrated": false,
+  "credentials_included": false,
+  "license_file": "BLENDER_MCP_LICENSE.txt"
+}

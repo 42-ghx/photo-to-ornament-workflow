@@ -1,0 +1,304 @@
+{
+  "version": "1.1.0",
+  "accepted_state": "ding_detail_half_03",
+  "repository": "https://github.com/42-ghx/photo-to-ornament-workflow",
+  "geometry_changed": false,
+  "credentials_included": false,
+  "files": [
+    {
+      "file": ".agents/skills/photo-to-ornament/agents/openai.yaml",
+      "bytes": 341,
+      "sha256": "fab248b039a714bc59f7663f823f9aeff8dc14db0f4f805bd1f695d63a8319bc"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/references/accepted_case.json",
+      "bytes": 802,
+      "sha256": "afb660b18f2c301d4cf98f32f7d423a8c484536856564a464a0a3018a506638c"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/references/ding_prompts.json",
+      "bytes": 12326,
+      "sha256": "e7757a30a16fa82079462c5431ff7cdfabcdd5d92258657538b0495f6b50d7a5"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/references/geometry.md",
+      "bytes": 2798,
+      "sha256": "514b3061dde6a4046b106e0e29cf8692fb8e94b9c71bd25d947c80343ae9ba71"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/references/wear.md",
+      "bytes": 1113,
+      "sha256": "1fc8fcbf3fd490c3d189355ab63afe8b0ab34c2dc642742724c3fd504352da82"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/scripts/build_quad_uv.py",
+      "bytes": 13684,
+      "sha256": "8df59daa2a665e2315b65f5a2b2c051ee99daee90f2e682d1b75c4f3d12159b9"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/scripts/build_scene.py",
+      "bytes": 10261,
+      "sha256": "47f937aea14346737f4130abb74cd4aadf7315919a4ede55f8d6597bcd82d67b"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/scripts/contour_base.py",
+      "bytes": 2955,
+      "sha256": "6da4e72948a80b351fe21a50c563275ec3cd598eb828d4b28c1587e885645b69"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/scripts/contour_damage.py",
+      "bytes": 3757,
+      "sha256": "cb96702bfb7af2911ef51c46eba7b2ea8a33e20629b6182d066f53c5cd23f528"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/scripts/scale_relief.py",
+      "bytes": 2328,
+      "sha256": "36880d917c34dafaeda30921b535242633dff987c63c8ceafb569e01e1841b9a"
+    },
+    {
+      "file": ".agents/skills/photo-to-ornament/SKILL.md",
+      "bytes": 4854,
+      "sha256": "38e41412195a0cd3d2a05fe7d888e8a2182df73854b6ecf14b7d2abf9798472d"
+    },
+    {
+      "file": ".gitattributes",
+      "bytes": 211,
+      "sha256": "282cadfb4041bc7d6f55434da977119c82a8b5466d0c10f983cab77f2a5ff078"
+    },
+    {
+      "file": ".gitignore",
+      "bytes": 137,
+      "sha256": "ae4ec91e7c0ef269f07c9f6bfd4f91d9381e5837ead206bdbc07cc5572d0682b"
+    },
+    {
+      "file": "AGENTS.md",
+      "bytes": 1274,
+      "sha256": "24515b34a78dce769f94d1c0a81d36657a5c9edbea83a035d1e25d5dd09e24e7"
+    },
+    {
+      "file": "assets/Edge Damage Modifer.blend",
+      "bytes": 1308520,
+      "sha256": "d37071fd1f99ecbf2662ddbee98d0c63b071cb0cf10f1f555e812b7abf80537f"
+    },
+    {
+      "file": "cases/ding/accepted/01_restored_detail.png",
+      "bytes": 2068942,
+      "sha256": "b72187afb5c5f104ed5ff05eb0b03665324b5f808ff707ad3b9d98fc0ba12e69"
+    },
+    {
+      "file": "cases/ding/accepted/02_low_side.png",
+      "bytes": 1290295,
+      "sha256": "1f4bdb9cd1c2e63db0ff0ae12cb6b48d4d2b60bb231c50b647832125e1203de5"
+    },
+    {
+      "file": "cases/ding/accepted/detail_checks.json",
+      "bytes": 594,
+      "sha256": "83b112e1d9f22cd7aaedb75d5ec652eba2dbeec46740efda78b23091373b94e6"
+    },
+    {
+      "file": "cases/ding/accepted/fbx_checks.json",
+      "bytes": 291,
+      "sha256": "c261905d6c40a2a2ef5748bfe3d79239287b7defc65bdd71b1569d9b624bbb20"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/01_form.png",
+      "bytes": 2333127,
+      "sha256": "09429e887822b0c101ec20a9f7652e5cdea222c5c1eb393a68a5bdb9564f2c97"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/02_thickness.png",
+      "bytes": 2257977,
+      "sha256": "25c11cad363896b186fbf12950b4cc041fa4715b55506ca7d8dab2bdfd91b61b"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/03_bottom.png",
+      "bytes": 2142867,
+      "sha256": "8f2d7f727b6fadd6e080b2c740e45c099ad6f33bb1fcbc94319903eaeac6a512"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/04_side_loops.png",
+      "bytes": 2576121,
+      "sha256": "8e36d9b2fd40d5e3278cfd97bc428d83005f5ba840e680bf143f70476a5f51b6"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/05_uv_checker.png",
+      "bytes": 2489568,
+      "sha256": "9dcd95d90d03a429600229635794c93fea9768a7a372986db2a464f47876c3a7"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/fbx_uv_checks.json",
+      "bytes": 373,
+      "sha256": "2bdeda5a5a3f05d62e1e7f7eb60b76e2c1e2e7bb6bfbfcbe6da1d8f194308f1e"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/ornament_highpoly.blend",
+      "bytes": 147828830,
+      "sha256": "5d7f4a950cce53b0caf24a574a519f71d154aef16cfc94815f8e08219afda54e"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/ornament_highpoly.fbx",
+      "bytes": 123781100,
+      "sha256": "baab246045bc56b1c8cbde6d394b5eeffb924f44c8342d8770f6c7f1b874501e"
+    },
+    {
+      "file": "cases/ding/accepted/reproduced/UV_layout_4096.svg",
+      "bytes": 1199058,
+      "sha256": "31515f1f9228c50f1f1d30419ffc4a3b0b1724c35ead4578dfdd02b276bf27f5"
+    },
+    {
+      "file": "cases/ding/accepted/side_loops.png",
+      "bytes": 2565173,
+      "sha256": "e3d14e2d8d5600b6e5ab81f9a676133e31d1d726d6e21e2f04f9ad6ca9137286"
+    },
+    {
+      "file": "cases/ding/accepted/uv_checker.png",
+      "bytes": 2511700,
+      "sha256": "13778290781a0fe3ba80648197988ea5cfc8315b0027383301d593e22ca40eb2"
+    },
+    {
+      "file": "cases/ding/accepted/UV_layout_4096.svg",
+      "bytes": 1199058,
+      "sha256": "31515f1f9228c50f1f1d30419ffc4a3b0b1724c35ead4578dfdd02b276bf27f5"
+    },
+    {
+      "file": "cases/ding/maps/01_cutout.png",
+      "bytes": 1854004,
+      "sha256": "61c7b08022ef692137d8f07727c22276ac87e4b4621eadba51d6018b90a03191"
+    },
+    {
+      "file": "cases/ding/maps/02_soft_delight.png",
+      "bytes": 1908471,
+      "sha256": "4a6f89fd686d834016a518caa29e30366d687a8b5e0b3a954b6cd49608b1ec13"
+    },
+    {
+      "file": "cases/ding/maps/03_material_mask.png",
+      "bytes": 821403,
+      "sha256": "53cbbff4b9365c33965c22ce484d34135fe83be94cc3b0f5b1d9034f150b29a1"
+    },
+    {
+      "file": "cases/ding/maps/04_height.png",
+      "bytes": 1226931,
+      "sha256": "c02cfd5ce0008936386593e2678807e84637f8ce4307476036591deed021b9ab"
+    },
+    {
+      "file": "cases/ding/mesh_before/ding_quad_uv.npz",
+      "bytes": 84966138,
+      "sha256": "47882534c9fe1f6bcbb7b448f409166fd67c47e815fb5547022e66428db8b1a8"
+    },
+    {
+      "file": "cases/ding/mesh_before/mesh_checks.json",
+      "bytes": 1685,
+      "sha256": "593648c4813e7907567a3588fe128f8bcc1beb0a45515eed3aa16ac81d706b07"
+    },
+    {
+      "file": "cases/ding/mesh_before/uv_charts.json",
+      "bytes": 5075380,
+      "sha256": "e674c03bbc5e554a018ee7d262f3dccd764b599670a7db692ebc7153d12c0f5a"
+    },
+    {
+      "file": "cases/ding/source_photo.png",
+      "bytes": 1213477,
+      "sha256": "63b01f6463f792d8be849ef135e7c698c7ca76a9556bb245291a5f827e53d272"
+    },
+    {
+      "file": "CLOUD_SETUP.md",
+      "bytes": 2956,
+      "sha256": "7fe01867a30f8ef168c5734dbfbe37b27f2375f6f88e8969a03a3e496ad0d339"
+    },
+    {
+      "file": "MIGRATION.md",
+      "bytes": 6101,
+      "sha256": "48ebbafd897a47858aeda2d948fd45e386c1cc899280191c593f90a962b6d749"
+    },
+    {
+      "file": "README.md",
+      "bytes": 1749,
+      "sha256": "bf3b8a8e2777d3288914a912b7a9c240ce788b2e7eee9de794f632e063d47f1a"
+    },
+    {
+      "file": "run_case.ps1",
+      "bytes": 1570,
+      "sha256": "e16d7f37cf1512dc0d6ed4c691cfdc7e4c5c3fff40cf223742e45422c8f1e915"
+    },
+    {
+      "file": "run_case.py",
+      "bytes": 2833,
+      "sha256": "8b33d0e0e88924ddfbb9b08c26928b71161e37ad2bf78e6ef50754892a05d69e"
+    },
+    {
+      "file": "setup/blender_addon.py",
+      "bytes": 175194,
+      "sha256": "f43469c8518c7021e0060e32cfe52e3beb126b0f62fbae7293106642a3ebda89"
+    },
+    {
+      "file": "setup/BLENDER_MCP_LICENSE.txt",
+      "bytes": 1071,
+      "sha256": "049501fd54d27852507853a5b88094ca1c6ff97404418a5032f3310eecc9cde6"
+    },
+    {
+      "file": "setup/blender_mcp_snapshot.json",
+      "bytes": 665,
+      "sha256": "ccdbba4a64dda89d9c1826b3ca25fb55e0366b24f09e455a7b3dffc0e075aba3"
+    },
+    {
+      "file": "setup/bootstrap.ps1",
+      "bytes": 1021,
+      "sha256": "04cf15332ea70189bcb5b20b18e43a2d91528dd168f8a07664dfdb6856fd404b"
+    },
+    {
+      "file": "setup/bootstrap_cloud.sh",
+      "bytes": 2020,
+      "sha256": "2fb2833a7e310045aa43658f643e1d20d5b193adb758604d9a1cc5d0fff92591"
+    },
+    {
+      "file": "setup/diagnose.py",
+      "bytes": 2227,
+      "sha256": "4b73c595af5ca0518fc2e8d87fb2cf9c2b522354ecbbb9b1117d58c962c7804d"
+    },
+    {
+      "file": "setup/install_blender_server.ps1",
+      "bytes": 968,
+      "sha256": "9803576753d01fc32e91ff76fa73611d2f76c705e060e36b6b0cffbacab0ff19"
+    },
+    {
+      "file": "setup/install_skill.py",
+      "bytes": 1802,
+      "sha256": "4028cad9f8c354bd7c2b2dd566d357c8a9d64360494135f82b93fbcbfcd19707"
+    },
+    {
+      "file": "setup/mcp.template.toml",
+      "bytes": 436,
+      "sha256": "3030791322b14d6d7e759636feb3d04a0183921aa4b237f17aca13400d453142"
+    },
+    {
+      "file": "setup/requirements.txt",
+      "bytes": 127,
+      "sha256": "825afbd550ec4148ee231684176f7de6abd8e782483fbf8ecbb32c609810296e"
+    },
+    {
+      "file": "setup/tested_versions.json",
+      "bytes": 212,
+      "sha256": "b40d4680985ba545293fb050049f5c2ecc03d58c4c5349c00ed39fbef507341f"
+    },
+    {
+      "file": "setup/verify_manifest.py",
+      "bytes": 1110,
+      "sha256": "a6594135236ac252810c4ce103c981b6aa19ca5f46ac6ae991980bf3bd406694"
+    },
+    {
+      "file": "START_HERE.md",
+      "bytes": 3402,
+      "sha256": "414a6515de101ea0b05d6b3ebfe1507c0ad3c27617352eb06118f21fc8fbb57e"
+    },
+    {
+      "file": "VALIDATION.json",
+      "bytes": 1005,
+      "sha256": "ad47c3f6b6a9344a07341cbcc90b5b857d46c295f8113a4d7c0d49843d5e2fcb"
+    },
+    {
+      "file": "WORKFLOW_SUMMARY.md",
+      "bytes": 2807,
+      "sha256": "2e0f04e9cbe10dba824ca3ff4cc817722e72fcbe041078b1381caa2529aadeb8"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+.venv/
+.blender-mcp-venv/
+.tools/
+runs/
+backups/
+__pycache__/
+*.py[cod]
+*.blend1
+*.blend2
+.env
+.env.*
+auth.json
+credentials*
+*.pem
+*.key

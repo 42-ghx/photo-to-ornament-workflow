@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "source": "original BEFORE ding_remesh_uv_01",
+  "new_regularization": false,
+  "new_geometric_smoothing": false,
+  "base_thickness_mm": 12.849999591708183,
+  "original_relief_amplitude_mm": 22.15000055730343,
+  "new_relief_amplitude_mm": 11.07499934732914,
+  "total_height_mm": 23.924998939037323,
+  "pointwise_50_percent_error_m": 9.313225746154785e-10,
+  "wall_and_bottom_exactly_preserved": true,
+  "xy_exactly_preserved": true,
+  "quads": 2958074,
+  "vertices": 2958056,
+  "uv_and_seams": "Mesh datablock copied without edits",
+  "before_source_unchanged": true
+}
