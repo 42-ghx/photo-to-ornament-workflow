@@ -15,6 +15,11 @@ def text_for(node):
         text += '\n\n' + '\n\n'.join(f'{key}：{value}' for key, value in node['params'])
     if node.get('command'):
         text += '\n\n```sh\n' + node['command'] + '\n```'
+    if node.get('assets'):
+        text += '\n\n### 关联文件\n\n' + '\n'.join(
+            f'- [{label}](../{path})' for label, path in node['assets'])
+    if node.get('note'):
+        text += '\n\n<!-- ornament-note -->\n' + node['note']
     return text
 
 

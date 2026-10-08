@@ -1,0 +1,306 @@
+{
+  "revision": 2,
+  "title": "照片纹样 · 节点工作台",
+  "nodes": [
+    {
+      "id": "photo",
+      "type": "source",
+      "title": "原照片 · 鼎纹样",
+      "lane": "image",
+      "x": 100,
+      "y": 100,
+      "inputs": {},
+      "params": {},
+      "history": [],
+      "outputs": [],
+      "source": "cases/ding/source_photo.png",
+      "preview": "cases/ding/source_photo.png"
+    },
+    {
+      "id": "cutout",
+      "type": "image_generate",
+      "title": "透明抠图",
+      "lane": "image",
+      "x": 560,
+      "y": 100,
+      "inputs": {
+        "image": "photo"
+      },
+      "params": {
+        "prompt": "移除背景、展台和投影，保留器物完整结构、原视角和真实开口，输出透明背景。",
+        "resolution": 1024,
+        "seed": 42,
+        "strength": 0.7,
+        "transparent": true
+      },
+      "history": [],
+      "outputs": [],
+      "source": "cases/ding/maps/01_cutout.png",
+      "preview": "cases/ding/maps/01_cutout.png"
+    },
+    {
+      "id": "delight",
+      "type": "image_generate",
+      "title": "柔和去光照",
+      "lane": "image",
+      "x": 1020,
+      "y": 100,
+      "inputs": {
+        "image": "cutout"
+      },
+      "params": {
+        "prompt": "减弱反光、暖光和大面积阴影；保留读形所需的局部明暗与完整原细节，不将锈色判作孔洞。",
+        "resolution": 1024,
+        "seed": 42,
+        "strength": 0.5
+      },
+      "history": [],
+      "outputs": [],
+      "source": "cases/ding/maps/02_soft_delight.png",
+      "preview": "cases/ding/maps/02_soft_delight.png"
+    },
+    {
+      "id": "material-mask",
+      "type": "image_generate",
+      "title": "材料遮罩 · 白色实体",
+      "lane": "image",
+      "x": 1480,
+      "y": 100,
+      "inputs": {
+        "image": "delight"
+      },
+      "params": {
+        "prompt": "生成展平纹样的材料遮罩：白色实体，黑色外部和指定贯通孔；刻线、眼眶与凹槽保留为白色实体。保持连续连接，不添加矩形背板。",
+        "resolution": 1024,
+        "seed": 42,
+        "strength": 0.65
+      },
+      "history": [],
+      "outputs": [],
+      "source": "cases/ding/maps/03_material_mask.png",
+      "preview": "cases/ding/maps/03_material_mask.png"
+    },
+    {
+      "id": "height",
+      "type": "image_generate",
+      "title": "连续高度 · 保留刻线",
+      "lane": "image",
+      "x": 1940,
+      "y": 100,
+      "inputs": {
+        "image": "delight",
+        "mask": "material-mask"
+      },
+      "params": {
+        "prompt": "输出与材料遮罩共享布局的连续高度图，保留眼睛、主次形体和细刻线；无光照、AO与锈斑噪声，不做六级量化或全局抹平。",
+        "resolution": 1024,
+        "seed": 42,
+        "strength": 0.6
+      },
+      "history": [],
+      "outputs": [],
+      "source": "cases/ding/maps/04_height.png",
+      "preview": "cases/ding/maps/04_height.png"
+    },
+    {
+      "id": "density",
+      "type": "density_guide",
+      "title": "红色密度引导",
+      "lane": "image",
+      "x": 2400,
+      "y": 100,
+      "inputs": {
+        "image": "height"
+      },
+      "params": {
+        "brush_size": 32,
+        "density": 4,
+        "local_density": 2
+      },
+      "history": [],
+      "outputs": []
+    },
+    {
+      "id": "image-pattern",
+      "type": "pattern",
+      "title": "纹样密度排列",
+      "lane": "image",
+      "x": 2860,
+      "y": 100,
+      "inputs": {
+        "image": "height",
+        "mask": "material-mask",
+        "guide": "density"
+      },
+      "params": {
+        "resolution": 1024,
+        "density": 4,
+        "local_density": 2,
+        "seed": 42,
+        "rotation": 0,
+        "background": "transparent"
+      },
+      "history": [],
+      "outputs": []
+    },
+    {
+      "id": "pipe-uv",
+      "type": "uv_extract",
+      "title": "CylinderPipe · 提取 UV",
+      "lane": "uv",
+      "x": 100,
+      "y": 1350,
+      "inputs": {},
+      "params": {
+        "resolution": 1024
+      },
+      "history": [],
+      "outputs": [],
+      "source": "runs/canvas-studio/uploads/CylinderPipe.obj"
+    },
+    {
+      "id": "import-mask",
+      "type": "uv_mask",
+      "title": "导入白色 UV 遮罩（可选）",
+      "lane": "uv",
+      "x": 560,
+      "y": 1350,
+      "inputs": {},
+      "params": {
+        "resolution": 1024
+      },
+      "history": [],
+      "outputs": []
+    },
+    {
+      "id": "uv-density",
+      "type": "density_guide",
+      "title": "UV 区域 · 红色加密",
+      "lane": "uv",
+      "x": 1020,
+      "y": 1350,
+      "inputs": {
+        "image": "pipe-uv"
+      },
+      "params": {
+        "brush_size": 32,
+        "density": 5,
+        "local_density": 2
+      },
+      "history": [],
+      "outputs": []
+    },
+    {
+      "id": "uv-pattern",
+      "type": "pattern",
+      "title": "UV 范围内生成纹样",
+      "lane": "uv",
+      "x": 1480,
+      "y": 1350,
+      "inputs": {
+        "image": "height",
+        "mask": "pipe-uv",
+        "guide": "uv-density"
+      },
+      "params": {
+        "resolution": 1024,
+        "density": 5,
+        "local_density": 2,
+        "seed": 42,
+        "rotation": 0,
+        "background": "transparent"
+      },
+      "history": [],
+      "outputs": []
+    },
+    {
+      "id": "uv-ai",
+      "type": "image_generate",
+      "title": "Codex · UV 纹样创作",
+      "lane": "uv",
+      "x": 1940,
+      "y": 1350,
+      "inputs": {
+        "image": "height",
+        "mask": "pipe-uv",
+        "guide": "uv-density"
+      },
+      "params": {
+        "prompt": "参考纹样风格，在 UV 遮罩白色范围内创作连续精细纹样。黑色外部及孔洞留空；红色引导区域增加纹样密度，保留层级与刻线。输出仅为纹样图，不是模型渲染。",
+        "resolution": 1024,
+        "seed": 42,
+        "strength": 0.7,
+        "density": 5,
+        "local_density": 2
+      },
+      "history": [],
+      "outputs": []
+    },
+    {
+      "id": "blender-case",
+      "type": "blender",
+      "title": "Blender · 鼎案例复现",
+      "lane": "blender",
+      "x": 100,
+      "y": 2600,
+      "inputs": {
+        "image": "height",
+        "mask": "material-mask"
+      },
+      "params": {
+        "mode": "approved_before",
+        "factor": 0.5,
+        "width_m": 1,
+        "base_m": 0.01285,
+        "relief_m": 0.02215,
+        "wall_layers": 16
+      },
+      "history": [],
+      "outputs": [
+        {
+          "label": "正面预览",
+          "path": "runs/ding-blender-5.2.2-validation/result/01_form.png",
+          "url": "/files/runs/ding-blender-5.2.2-validation/result/01_form.png"
+        },
+        {
+          "label": "侧面厚度",
+          "path": "runs/ding-blender-5.2.2-validation/result/02_thickness.png",
+          "url": "/files/runs/ding-blender-5.2.2-validation/result/02_thickness.png"
+        },
+        {
+          "label": "底面",
+          "path": "runs/ding-blender-5.2.2-validation/result/03_bottom.png",
+          "url": "/files/runs/ding-blender-5.2.2-validation/result/03_bottom.png"
+        },
+        {
+          "label": "循环边",
+          "path": "runs/ding-blender-5.2.2-validation/result/04_side_loops.png",
+          "url": "/files/runs/ding-blender-5.2.2-validation/result/04_side_loops.png"
+        },
+        {
+          "label": "UV 棋盘格",
+          "path": "runs/ding-blender-5.2.2-validation/result/05_uv_checker.png",
+          "url": "/files/runs/ding-blender-5.2.2-validation/result/05_uv_checker.png"
+        },
+        {
+          "label": "FBX",
+          "path": "runs/ding-blender-5.2.2-validation/result/ornament_highpoly.fbx",
+          "url": "/files/runs/ding-blender-5.2.2-validation/result/ornament_highpoly.fbx"
+        },
+        {
+          "label": "Blender 工程",
+          "path": "runs/ding-blender-5.2.2-validation/result/ornament_highpoly.blend",
+          "url": "/files/runs/ding-blender-5.2.2-validation/result/ornament_highpoly.blend"
+        },
+        {
+          "label": "重导入报告",
+          "path": "runs/ding-blender-5.2.2-validation/result/fbx_uv_checks.json",
+          "url": "/files/runs/ding-blender-5.2.2-validation/result/fbx_uv_checks.json"
+        }
+      ],
+      "preview": "runs/ding-blender-5.2.2-validation/result/01_form.png"
+    }
+  ],
+  "edges": [],
+  "description": "图片、UV 纹样和 Blender 三条工作线；Codex 图像任务需要当前聊天工具执行。"
+}

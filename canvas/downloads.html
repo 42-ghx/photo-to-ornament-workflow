@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>下载项目 · 纹样工作室</title>
+<style>
+body{margin:0;background:#101318;color:#e6ebe7;font:16px/1.7 system-ui,sans-serif}main{max-width:900px;margin:50px auto;padding:24px}a{color:#a3d3bd}h1{font-size:32px}h2{font-size:22px}p{color:#aeb8b2}.card{background:#1a2225;border:1px solid #35413c;border-radius:16px;padding:24px;margin:24px 0}.links{display:flex;flex-wrap:wrap;gap:12px}.download{display:inline-block;padding:10px 16px;border:1px solid #6c927f;border-radius:8px;text-decoration:none;color:#cfeddf}.download small{display:block;font-size:12px;color:#97aaa0}.error{color:#f6b6a4}#parts .download{font-size:14px}
+</style>
+<main>
+<a href="./">← 返回节点画板</a>
+<h1>下载完整项目</h1>
+<p>保留源码、画板状态、历史版本、效果图、上传模型和 Blender / FBX 资料。解压后阅读 PACKAGE_START.md。</p>
+<div class="card"><h2>完整 ZIP</h2><p>直接下载完整文件；连接中断时可使用支持断点续传的下载工具。</p><div id="full" class="links"></div></div>
+<div class="card"><h2>64 MB 分卷</h2><p>下载全部分卷和合并脚本，放到同一个文件夹。Windows 双击 merge_downloads.cmd；Linux / macOS 执行 bash merge_downloads.sh。合并过程中会校验每个分卷和完整文件，然后得到可解压的 ZIP。</p><div id="tools" class="links"></div><hr><div id="parts" class="links"></div></div>
+<p id="status" role="status">正在读取下载文件…</p>
+</main>
+<script>
+(async()=>{const status=document.getElementById('status');try{const response=await fetch('/api/downloads');if(!response.ok)throw new Error('下载服务暂时不可用');const data=await response.json();for(const file of data.files){const link=document.createElement('a');link.className='download';link.href=file.url;link.download=file.name;const label=document.createElement('span');label.textContent=file.name;const size=document.createElement('small');size.textContent=(file.bytes/1024/1024).toFixed(2)+' MB';link.append(label,size);const target=/\.\d{3}$/.test(file.name)?'parts':/\.zip(?:\.sha256)?$/.test(file.name)?'full':'tools';document.getElementById(target).append(link)}status.textContent=data.files.length?'下载文件已就绪。':'当前环境尚未准备项目包。'}catch(error){status.className='error';status.textContent=error.message}})();
+</script>
+</html>
