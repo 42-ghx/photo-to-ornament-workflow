@@ -87,8 +87,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 2172,
-      "sha256": "a4b91cccde2f7befc9ce6b0997c0fe85aac7502810ce201a2423a52981fdf412"
+      "bytes": 5983,
+      "sha256": "0606dacb954cf979e5dc48497e150726a6c1edb52ec84d580a4a709c7fe2085e"
     },
     {
       "file": "START_HERE.md",
@@ -309,6 +309,36 @@
       "file": "cases/ding/source_photo.png",
       "bytes": 1213477,
       "sha256": "63b01f6463f792d8be849ef135e7c698c7ca76a9556bb245291a5f827e53d272"
+    },
+    {
+      "file": "docs/images/ding-front.png",
+      "bytes": 2310078,
+      "sha256": "5f1fbe19ad7823b112d666dc273649e8abe0b5e28a56dc069633a1acff615674"
+    },
+    {
+      "file": "docs/images/ding-thickness.png",
+      "bytes": 2218904,
+      "sha256": "df1f67d0b49fd8e349259821cbd0c6ba4be0a4d6dd378273427ef061e4e2bf3b"
+    },
+    {
+      "file": "docs/images/ding-uv-checker.png",
+      "bytes": 2459710,
+      "sha256": "ab53d50dc4b8b8e70c4330adad3425077328637b8e56758660c132f301aa3387"
+    },
+    {
+      "file": "docs/images/node-studio.png",
+      "bytes": 388515,
+      "sha256": "65515c2cb567d682154acc29b8961f15040eca447a28e7193cc20514836b9a56"
+    },
+    {
+      "file": "docs/images/uv-pattern.png",
+      "bytes": 930972,
+      "sha256": "9e34a0de83fa0f7c7bb9816b8c5a87baa51f5b75dce7b5e297ef3b2a0888bb21"
+    },
+    {
+      "file": "downloads/README.md",
+      "bytes": 2546,
+      "sha256": "d4fc00a6e31b74c4abb2610c9b9e63b0f680728d03d6be69b2e098bbfd79aad2"
     },
     {
       "file": "run_case.ps1",
