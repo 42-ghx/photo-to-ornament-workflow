@@ -20,7 +20,7 @@ python -m pip install -r setup/requirements-studio.txt
 python setup/start_studio.py
 ```
 
-已有依赖环境可直接运行 `python canvas/server.py --host 127.0.0.1 --port 8001`。网页本身不提供图像生成能力，需要当前聊天可用的真实图像工具。
+已有依赖环境可直接运行 `python canvas/server.py --host 127.0.0.1 --port 8001`。网页保存请求；实际生成由当前聊天图像工具或[本机 OpenAI 兼容 API 执行器](image-api.md)完成。
 
 从其他工作目录调用时，给脚本、输入和输出传绝对路径：
 

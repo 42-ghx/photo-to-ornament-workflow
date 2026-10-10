@@ -378,7 +378,7 @@ class Studio:
                             if importlib.util.find_spec(name) is None]
         return {"image_generation": {"provider": "Codex image tool", "requested_provider": "Codex image 2", "mode": "codex_bridge", "available": True,
                   "requires_agent": True, "automatic": False,
-                  "message": "图片任务保存为 Codex 请求；由当前对话调用真实图像工具后回填，服务自身不具备图像工具调用权限。"},
+                  "message": "图片任务可由 Codex 对话或本机 image_api.py 接口执行器回填；Codex image 2 是历史请求标签，实际模型版本未由工具公开。"},
                 "blender": {"available": self.blender() is not None and not geometry_missing,
                             "modes": ["from_maps"], "missing_python_modules": geometry_missing,
                             "requires_current_maps": True},
@@ -550,7 +550,7 @@ class Studio:
                       "output_directory": self.relative(out), "created_at": now(),
                       "instructions": "由 Codex 对话查看参考图并调用真实 image_gen 工具；将生成 PNG 放入输出目录，然后 POST /api/codex/complete {job_id,path}。若工具不能控制 seed/strength/精确尺寸，应如实注明；不得用本地图像运算冒充生成。"}
         atomic_json(out / "codex-request.json", descriptor)
-        self.progress(job_id, 5, "等待 Codex image 2：请求已保存，请让当前对话处理待生成任务。服务不会自行调用对话工具。")
+        self.progress(job_id, 5, "图片请求已保存；由当前 Codex 对话或本机 API 执行器处理。")
         with self.lock:
             if self.cancellations[job_id].is_set():
                 raise Cancelled()
@@ -579,6 +579,18 @@ class Studio:
             job = self.jobs.get(job_id)
             if not job or job["status"] not in {"awaiting_codex", "running_codex"}:
                 raise BadRequest("此任务不在等待 Codex 图片状态")
+            generation = body.get("generation")
+            provenance = {"engine": "codex_image", "provider": "Codex image tool", "requested_provider": "Codex image 2", "actual_model": None}
+            if generation is not None:
+                if not isinstance(generation, dict) or generation.get("provider") != "openai_compatible":
+                    raise BadRequest("无效生图来源")
+                if set(generation) - {"provider", "requested_model", "reported_model"}:
+                    raise BadRequest("模型记录只接受模型名，禁止密钥或接口地址字段")
+                for key in ("requested_model", "reported_model"):
+                    value = generation.get(key)
+                    if (key == "requested_model" or value is not None) and (not isinstance(value, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:/-]{0,127}", value)):
+                        raise BadRequest("模型名无效")
+                provenance = {"engine": "openai_compatible_image", **generation}
             path = self.asset(body.get("path"))
             if path.suffix.lower() != ".png":
                 raise BadRequest("Codex 完成接口需要真实 PNG")
@@ -636,12 +648,21 @@ class Studio:
                 clip_report = {"mask": mask_ref, "mask_threshold": 128, "outside_mask_alpha": 0,
                                "output_dimensions": list(output_size), "mask_aspect_preserved": True,
                                "resampled_from_native": size != list(output_size), "output_bit_depth": 8}
-            self.finish(job_id, {"engine": "codex_image", "provider": "Codex image tool", "requested_provider": "Codex image 2",
+            self.finish(job_id, {**provenance,
                         "native_dimensions": size, "native_bit_depth": bit_depth, "mask_role": mask_role,
                         "original_bytes_preserved": uv_mask_path is None, "mask_clip": clip_report,
                         "native_parameter_support": {"seed": False, "strength": False, "exact_resolution": False},
                         "notes": str(body.get("notes", "")), "artifacts": artifacts}, out)
         return self.public_job(job_id)
+
+    def claim_image_api(self, body):
+        with self.lock:
+            job = self.jobs.get(body.get("job_id"))
+            if not job or job["status"] != "awaiting_codex":
+                raise BadRequest("任务已被领取或不在等待状态，不能重复调用 API")
+            job.update(status="running_codex", progress=20, message="本机 OpenAI 兼容接口执行器已领取任务", updated_at=now())
+            self.persist_job(job)
+            return self.public_job(job["id"])
 
     def codex_stage(self, body, failed=False):
         job_id = body.get("job_id")
@@ -1089,6 +1110,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.json_response(self.studio.restore(body))
             if method == "POST" and path == "/api/codex/complete":
                 return self.json_response(self.studio.complete_codex(body))
+            if method == "POST" and path == "/api/image-api/claim":
+                return self.json_response(self.studio.claim_image_api(body))
             if method == "POST" and path in {"/api/codex/start", "/api/codex/fail"}:
                 return self.json_response(self.studio.codex_stage(body, failed=path.endswith("/fail")))
             if method == "POST" and re.fullmatch(r"/api/jobs/[^/]+/cancel", path):
