@@ -1,4 +1,0 @@
-interface:
-  display_name: "照片转纹样、镂空高模与UV"
-  short_description: "沿用已确认细节生成材料遮罩与高度，制作密集高模、厚度循环边及分区UV"
-  default_prompt: "使用 $photo-to-ornament 从参考照片制作材料遮罩和连续高度图，并按要求生成保留细节的镂空高模与UV。"

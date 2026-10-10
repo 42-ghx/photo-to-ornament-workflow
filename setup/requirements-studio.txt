@@ -1,0 +1,3 @@
+# Four image stages, existing OBJ UV masks, and optional local pattern layout.
+numpy>=1.26,<3
+Pillow>=10,<13

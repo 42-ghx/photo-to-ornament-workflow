@@ -1,70 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="916" height="880" viewBox="0 0 916 880" role="img" aria-labelledby="title desc">
-<title id="title">照片转镂空纹样高模：节点流程预览</title>
-<desc id="desc">图像生成阶段分开材料遮罩与连续高度；高模含厚度循环边与分区UV；只将浮雕起伏减半；FBX重导入后查看。磨损为可选且尚未应用。</desc>
-<rect width="916" height="880" fill="#14181c" rx="16"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="626" viewBox="0 0 960 626" role="img" aria-labelledby="title desc">
+<title id="title">纹样工作室：四步图片流程</title>
+<desc id="desc">原照片之后依次补全与透明抠图、柔光参考、白色主纹剪影、保留刻线与眼部凹陷的连续高度；仅提供目标模型或明确要求时增加 UV 遮罩匹配。</desc>
+<rect width="960" height="626" rx="16" fill="#14181c"/>
+<defs><marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#92b8d0"/></marker></defs>
 <g font-family="Microsoft YaHei,system-ui,sans-serif">
-<text x="44" y="48" fill="#e8eceb" font-size="25" font-weight="500">照片 → 镂空纹样高模</text>
-<text x="44" y="78" fill="#a9b3b8" font-size="14">保留 Before 原细节 · 刻线写进高度 · 孔洞写进遮罩</text>
-<defs><marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#84979b"/></marker></defs>
-<path d="M284 186 C311.0 186 311.0 186 338 186" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M578 186 C605.0 186 605.0 186 632 186" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M284 371 C311.0 371 311.0 371 338 371" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M578 371 C605.0 371 605.0 371 632 371" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M284 556 C311.0 556 311.0 556 338 556" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M578 556 C605.0 556 605.0 556 632 556" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M284 741 C311.0 741 311.0 741 338 741" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M752 248 C752 278.5 164 278.5 164 309" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M752 248 C752 278.5 458 278.5 458 309" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M752 433 C752 463.5 164 463.5 164 494" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M752 618 C752 648.5 164 648.5 164 679" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)"/>
-<path d="M578 741 C605.0 741 605.0 741 632 741" fill="none" stroke="#657a7f" stroke-width="2" marker-end="url(#a)" stroke-dasharray="5 5"/>
-<rect x="44" y="124" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="59" y="150" fill="#92b8d0" font-size="12">01 · 输入</text>
-<text x="59" y="184" fill="#e8eceb" font-size="18" font-weight="500">原照片 / 任务定义</text>
-<text x="59" y="213" fill="#a9b3b8" font-size="13">区域、尺寸与观看距离</text>
-<rect x="338" y="124" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="353" y="150" fill="#92b8d0" font-size="12">02 · 已验证</text>
-<text x="353" y="184" fill="#e8eceb" font-size="18" font-weight="500">透明抠图</text>
-<text x="353" y="213" fill="#a9b3b8" font-size="13">去除背景、展台和投影</text>
-<rect x="632" y="124" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="647" y="150" fill="#92b8d0" font-size="12">03 · 已验证</text>
-<text x="647" y="184" fill="#e8eceb" font-size="18" font-weight="500">柔和去光照</text>
-<text x="647" y="213" fill="#a9b3b8" font-size="13">减弱反光，保留读形</text>
-<rect x="44" y="309" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="59" y="335" fill="#92b8d0" font-size="12">04 · 已验证</text>
-<text x="59" y="369" fill="#e8eceb" font-size="18" font-weight="500">材料遮罩</text>
-<text x="59" y="398" fill="#a9b3b8" font-size="13">白色材料 / 黑色贯通孔</text>
-<rect x="338" y="309" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="353" y="335" fill="#92b8d0" font-size="12">05 · 已验证</text>
-<text x="353" y="369" fill="#e8eceb" font-size="18" font-weight="500">连续高度图</text>
-<text x="353" y="398" fill="#a9b3b8" font-size="13">坡度、眼睛与刻线</text>
-<rect x="632" y="309" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="647" y="335" fill="#98c8b5" font-size="12">06 · 已验证</text>
-<text x="647" y="369" fill="#e8eceb" font-size="18" font-weight="500">地图检查</text>
-<text x="647" y="398" fill="#a9b3b8" font-size="13">完整、对齐、语义一致</text>
-<rect x="44" y="494" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="59" y="520" fill="#98c8b5" font-size="12">07 · 已验证</text>
-<text x="59" y="554" fill="#e8eceb" font-size="18" font-weight="500">高模 · 环带 · UV</text>
-<text x="59" y="583" fill="#a9b3b8" font-size="13">轮廓内高密度四边面</text>
-<rect x="338" y="494" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="353" y="520" fill="#98c8b5" font-size="12">08 · 已验证</text>
-<text x="353" y="554" fill="#e8eceb" font-size="18" font-weight="500">浮雕强度 × 0.5</text>
-<text x="353" y="583" fill="#a9b3b8" font-size="13">原细节保留，底厚不变</text>
-<rect x="632" y="494" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="647" y="520" fill="#98c8b5" font-size="12">09 · 已验证</text>
-<text x="647" y="554" fill="#e8eceb" font-size="18" font-weight="500">几何与 UV 检查</text>
-<text x="647" y="583" fill="#a9b3b8" font-size="13">孔洞、厚度、法线与接缝</text>
-<rect x="44" y="679" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="59" y="705" fill="#98c8b5" font-size="12">10 · 已验证</text>
-<text x="59" y="739" fill="#e8eceb" font-size="18" font-weight="500">FBX · 工程 · 回读</text>
-<text x="59" y="768" fill="#a9b3b8" font-size="13">坐标 / 面数 / UV 验证</text>
-<rect x="338" y="679" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="353" y="705" fill="#98c8b5" font-size="12">11 · 已验证</text>
-<text x="353" y="739" fill="#e8eceb" font-size="18" font-weight="500">Blender 查看</text>
-<text x="353" y="768" fill="#a9b3b8" font-size="13">核实本机连接或云端文件</text>
-<rect x="632" y="679" width="240" height="124" rx="9" fill="#232c33" stroke="#364149"/>
-<text x="647" y="705" fill="#d4b18c" font-size="12">12 · 可选 / 未应用</text>
-<text x="647" y="739" fill="#e8eceb" font-size="18" font-weight="500">可选磨损 · 复验</text>
-<text x="647" y="768" fill="#a9b3b8" font-size="13">局部权重；当前模型未应用</text>
-<text x="44" y="850" fill="#a9b3b8" font-size="13">可拖动、缩放、查看约束与命令；节点画布不自动执行建模。</text>
+<text x="40" y="48" fill="#e8eceb" font-size="25">纹样工作室 · 四步图片流程</text>
+<text x="40" y="78" fill="#a9b3b8" font-size="14">剪影保留实体支撑 · 刻线与眼部凹陷写入连续高度</text>
+<rect x="40" y="108" width="880" height="78" rx="9" fill="#232c33" stroke="#364149"/>
+<text x="58" y="139" fill="#e8eceb" font-size="18">原照片</text>
+<text x="58" y="164" fill="#a9b3b8" font-size="14">兽面纹局部照片 · 保留原始输入</text>
+<path d="M144 186V232" fill="none" stroke="#92b8d0" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="240" width="208" height="146" rx="9" fill="#232c33" stroke="#486574"/>
+<text x="54" y="268" fill="#92b8d0" font-size="12">步骤 1 · 已有结果</text>
+<text x="54" y="301" fill="#e8eceb" font-size="17">1. 补全与透明抠图</text>
+<text x="54" y="333" fill="#a9b3b8" font-size="13">保留可见结构</text>
+<text x="54" y="355" fill="#a9b3b8" font-size="13">补足边缘</text>
+<path d="M248 312H259" fill="none" stroke="#92b8d0" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="264" y="240" width="208" height="146" rx="9" fill="#232c33" stroke="#486574"/>
+<text x="278" y="268" fill="#92b8d0" font-size="12">步骤 2 · 已有结果</text>
+<text x="278" y="301" fill="#e8eceb" font-size="17">2. 柔光参考</text>
+<text x="278" y="333" fill="#a9b3b8" font-size="13">减弱反光与偏色</text>
+<text x="278" y="355" fill="#a9b3b8" font-size="13">保留读形</text>
+<path d="M472 312H483" fill="none" stroke="#92b8d0" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="488" y="240" width="208" height="146" rx="9" fill="#232c33" stroke="#486574"/>
+<text x="502" y="268" fill="#92b8d0" font-size="12">步骤 3 · 已有结果</text>
+<text x="502" y="301" fill="#e8eceb" font-size="17">3. 主纹剪影</text>
+<text x="502" y="333" fill="#a9b3b8" font-size="13">白色装饰实体</text>
+<text x="502" y="355" fill="#a9b3b8" font-size="13">凹陷仍保留支撑</text>
+<path d="M696 312H707" fill="none" stroke="#92b8d0" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="712" y="240" width="208" height="146" rx="9" fill="#232c33" stroke="#486574"/>
+<text x="726" y="268" fill="#92b8d0" font-size="12">步骤 4 · 已有结果</text>
+<text x="726" y="301" fill="#e8eceb" font-size="17">4. 连续高度</text>
+<text x="726" y="333" fill="#a9b3b8" font-size="13">细刻线与眼部凹陷</text>
+<text x="726" y="355" fill="#a9b3b8" font-size="13">连续坡度</text>
+<path d="M816 386V447" fill="none" stroke="#d4b18c" stroke-dasharray="6 5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="421" fill="#a9b3b8" font-size="14">默认在步骤 4 交付；补全及高度是艺术重建，不是测量深度。</text>
+<rect x="40" y="456" width="880" height="107" rx="9" fill="#232c33" stroke="#d4b18c" stroke-dasharray="6 5"/>
+<text x="58" y="488" fill="#e8eceb" font-size="18">5. UV 遮罩匹配（条件步骤）</text>
+<text x="58" y="518" fill="#d4b18c" font-size="14">提供目标模型或明确要求后开启</text>
+<text x="58" y="545" fill="#a9b3b8" font-size="13">核实模型与 UV · 保持剪影和高度对齐 · 默认不重复铺排</text>
+<text x="40" y="598" fill="#a9b3b8" font-size="13">原照片、四步结果和提示词均保留，每次新生成另存版本。</text>
 </g></svg>

@@ -1,0 +1,7 @@
+numpy>=1.26,<3
+Pillow>=10,<13
+scipy>=1.11,<2
+scikit-image>=0.22,<1
+shapely>=2,<3
+triangle>=20230923
+trimesh>=4,<6

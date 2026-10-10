@@ -1,0 +1,72 @@
+{
+  "purpose": "Lightweight bundled workbench demonstration; resized copies, not original-resolution production maps.",
+  "max_edge": 768,
+  "source_archive": "photo-to-ornament-workflow-full(1).zip",
+  "files": [
+    {
+      "path": "source_photo.png",
+      "source_sha256": "ac574593fc5dd37e2fec0825c3e589ac47276e91537352846b7c4362cacd1ee6",
+      "original_size": [
+        736,
+        478
+      ],
+      "demo_size": [
+        736,
+        478
+      ],
+      "demo_sha256": "a1416db344895ea4576f733672836289705967c910e64f903fc7a3f1e7f70cf2"
+    },
+    {
+      "path": "maps/01_reconstructed.png",
+      "source_sha256": "fd141196a55c55df8086bd2bda504b9cc10c1339e9729da7e27a83dc314e5078",
+      "original_size": [
+        1536,
+        1024
+      ],
+      "demo_size": [
+        768,
+        512
+      ],
+      "demo_sha256": "ba6612c2d5b5ca0f87d03eb68d6419f557c79c62e2d03231bc7d092258283acb"
+    },
+    {
+      "path": "maps/02_soft_delight.png",
+      "source_sha256": "887fb8329fdc2ca7e3bc810531b64c894625cc9813d80a7723e3171c34a66c2a",
+      "original_size": [
+        1536,
+        1024
+      ],
+      "demo_size": [
+        768,
+        512
+      ],
+      "demo_sha256": "ea5c1e19b3fee1af40cff9fe99515b5e9de0d0b05aed1c6653026d876ad876e2"
+    },
+    {
+      "path": "maps/03_material_mask.png",
+      "source_sha256": "af631172d2394ffb527d78e4a849e1ea2081d55de5f403626a069c164c016e10",
+      "original_size": [
+        1536,
+        1024
+      ],
+      "demo_size": [
+        768,
+        512
+      ],
+      "demo_sha256": "94a7158fbd45b0efc1ebe53f35fd7ed2ee0fd51ca83dba4bbdc67c0721aa3bd1"
+    },
+    {
+      "path": "maps/04_height.png",
+      "source_sha256": "ecc9cc91aa1b958d6c2170e1279a251f59afc8b644f6aec1fe472a0a38d84b00",
+      "original_size": [
+        1536,
+        1024
+      ],
+      "demo_size": [
+        768,
+        512
+      ],
+      "demo_sha256": "55f5c67a26ad2b5211ffe2bad22007d13b2326a90f8fdbaf52abdae0c03d448e"
+    }
+  ]
+}

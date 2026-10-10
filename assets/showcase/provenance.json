@@ -1,0 +1,372 @@
+{
+  "purpose": "Display-only README previews made from supplied existing result files; not production maps.",
+  "processing": "Pillow aspect-preserving thumbnail scaling, neutral layout, English labels, and checkerboard behind actual alpha transparency. JPEG previews flatten transparency for display. No generation, recoloring, contrast adjustment, cropping, mask repair, or geometry processing.",
+  "source_caveats": "Source QA describes artistic reconstruction, not measured depth or pixel-perfect registration. These previews are not production-readiness certification.",
+  "archives": [
+    {
+      "filename": "ornament-batch-17-four-stages.zip",
+      "sha256": "c306d9a5acf483b623de54f592dde32dac44feb7b17e29f31fcf9b6ea572e1a4"
+    },
+    {
+      "filename": "ornament-batch-27-four-stages.zip",
+      "sha256": "228ffe9d795f6d250b5f8f5a88a120a79ec0dd2645b2cee25bbb411ed741ed5f"
+    }
+  ],
+  "overlap_check": {
+    "case_directories": 44,
+    "distinct_source_file_sha256": 44,
+    "distinct_decoded_source_rgb_sha256": 44,
+    "exact_source_duplicates": [],
+    "decoded_source_duplicates": [],
+    "scope": "Exact source-file and decoded-RGB identity checks; does not establish unique motifs, artifacts, subjects, or distinct artistic designs."
+  },
+  "previews": [
+    {
+      "file": "overview.jpg",
+      "dimensions": [
+        1800,
+        1170
+      ],
+      "inputs": [
+        {
+          "member": "ornament-batch-17/01/01_completed_cutout.png",
+          "sha256": "0538c56ef7a0417f75e188a9eeb7a3308805f2f75a996f992fd31e9deb89a549",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "17/01"
+        },
+        {
+          "member": "ornament-batch-17/02/01_completed_cutout.png",
+          "sha256": "1ed87f4fc79f8734477e8eb81368c8d3cbd06dd41eb0e41c4c3bd78839c3eaa5",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "17/02"
+        },
+        {
+          "member": "ornament-batch-17/04/01_completed_cutout.png",
+          "sha256": "af3476584bec4b6510b1c602243ab7fe4f1c267e46d7e8f148d2e7b7ab72c660",
+          "original_dimensions": [
+            1536,
+            1024
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "17/04"
+        },
+        {
+          "member": "ornament-batch-17/08/01_completed_cutout.png",
+          "sha256": "1ea000df429c5613ed7b42f8410c6a82b82deb7999a21a3e952d2fb26948f1de",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "17/08"
+        },
+        {
+          "member": "ornament-batch-17/15/01_completed_cutout.png",
+          "sha256": "8e9142dbd59305805bf39f4dca9dcd7f85f0a57bbe312e78f4ed4de7d226cd0a",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "17/15"
+        },
+        {
+          "member": "ornament-batch-17/17/01_completed_cutout.png",
+          "sha256": "674f1045856e260a49e2dbfaa73f44befc652ae11e5689f7bd50fc7b38dcc556",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "17/17"
+        },
+        {
+          "member": "ornament-batch-27/03/01_completed_cutout.png",
+          "sha256": "2dc1eeface1a52a809245ba2364172f7b3a800e0145424872cba34e20d2f0bb3",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "27/03"
+        },
+        {
+          "member": "ornament-batch-27/13/01_completed_cutout.png",
+          "sha256": "d70f7f12dbb3418b147b9fb4795b6f16dd2ab1d62cc3172106937bca825c6bd7",
+          "original_dimensions": [
+            1536,
+            1024
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "27/13"
+        },
+        {
+          "member": "ornament-batch-27/14/01_completed_cutout.png",
+          "sha256": "b57c78e903f67a9afbce885c3c9eca048c25c6d3d39fe15b58860b9f2ca29e2c",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "27/14"
+        },
+        {
+          "member": "ornament-batch-27/16/01_completed_cutout.png",
+          "sha256": "b379aa5a071b98ae91dcda65ad6ff879a06e5788fee566501a49b4db8a75452b",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "27/16"
+        },
+        {
+          "member": "ornament-batch-27/18/01_completed_cutout.png",
+          "sha256": "16569a4feb56e7adc1388cd72a53d338f7c7e358a1e0b3f6b34e072ed3464b28",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "27/18"
+        },
+        {
+          "member": "ornament-batch-27/24/01_completed_cutout.png",
+          "sha256": "0daba75f79f343238f3b734656fbf66d236743b25cf78ea61f0d464a4461c789",
+          "original_dimensions": [
+            1254,
+            1254
+          ],
+          "original_mode": "RGBA",
+          "actual_transparency": true,
+          "case": "27/24"
+        }
+      ],
+      "sha256": "c917e34b79326219789522b51b75180e0673a354db23d540d7b0c5d7a3b4ce9f",
+      "bytes": 470519
+    },
+    {
+      "file": "example-01.jpg",
+      "dimensions": [
+        2000,
+        620
+      ],
+      "case": "17/01",
+      "title": "Bronze geometric face",
+      "inputs": [
+        {
+          "member": "ornament-batch-17/01/00_source.jpg",
+          "sha256": "fdb5cb7513e8c02fae886c8b1b0adabc98c61a590521b7229b6fb7e911818270",
+          "original_dimensions": [
+            483,
+            640
+          ],
+          "original_mode": "RGB",
+          "stage": "Source",
+          "actual_transparency": false
+        },
+        {
+          "member": "ornament-batch-17/01/01_completed_cutout.png",
+          "sha256": "0538c56ef7a0417f75e188a9eeb7a3308805f2f75a996f992fd31e9deb89a549",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "stage": "Cutout",
+          "actual_transparency": true
+        },
+        {
+          "member": "ornament-batch-17/01/02_soft_reference.png",
+          "sha256": "21a094aabb3feb28965023c443c7f7cb61dd029e231ded2337a38067fcf4105e",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "stage": "Soft reference",
+          "actual_transparency": true
+        },
+        {
+          "member": "ornament-batch-17/01/03_white_motif_mask.png",
+          "sha256": "81e50d71c936204003a7216fa40237b961bd69b61e1932b937c373229cbaa54d",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGB",
+          "stage": "Motif mask",
+          "actual_transparency": false
+        },
+        {
+          "member": "ornament-batch-17/01/04_continuous_height.png",
+          "sha256": "42d31c636ed23dc19deb89d4076a5b77039e8849fae8491f07e3fd33696b8058",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGB",
+          "stage": "Height",
+          "actual_transparency": false
+        }
+      ],
+      "sha256": "9c685b7658277561e031093404de8be391bc02b47a0cb9294991c5c0f0d73f2c",
+      "bytes": 244004
+    },
+    {
+      "file": "example-02.jpg",
+      "dimensions": [
+        2000,
+        620
+      ],
+      "case": "27/03",
+      "title": "Ram-head relief",
+      "inputs": [
+        {
+          "member": "ornament-batch-27/03/00_source.jpg",
+          "sha256": "8d2efc0b07c4667d66d5932fde2079a695f867b54cd672f19f25cbe227a15920",
+          "original_dimensions": [
+            911,
+            990
+          ],
+          "original_mode": "RGB",
+          "stage": "Source",
+          "actual_transparency": false
+        },
+        {
+          "member": "ornament-batch-27/03/01_completed_cutout.png",
+          "sha256": "2dc1eeface1a52a809245ba2364172f7b3a800e0145424872cba34e20d2f0bb3",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "stage": "Cutout",
+          "actual_transparency": true
+        },
+        {
+          "member": "ornament-batch-27/03/02_soft_reference.png",
+          "sha256": "c66aef6c8476a2faea56d9d4567d5d5db34f612445daf03056065a84c542ad35",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "stage": "Soft reference",
+          "actual_transparency": true
+        },
+        {
+          "member": "ornament-batch-27/03/03_white_motif_mask.png",
+          "sha256": "63ab1ced7cec99a796d2fdaf416c577592b5698aedd7960c6f81fdec2a543b69",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGB",
+          "stage": "Motif mask",
+          "actual_transparency": false
+        },
+        {
+          "member": "ornament-batch-27/03/04_continuous_height.png",
+          "sha256": "4fd8a65bdd370cfae2cbd70b967a5f175b3bbbc674dc56a34a1af0fab795d73d",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGB",
+          "stage": "Height",
+          "actual_transparency": false
+        }
+      ],
+      "sha256": "47037b24c8f15c7abf653022b52cbcb7012752df06f4fc265aa5626fe8473797",
+      "bytes": 205253
+    },
+    {
+      "file": "example-03.jpg",
+      "dimensions": [
+        2000,
+        620
+      ],
+      "case": "27/18",
+      "title": "Openwork ornament set",
+      "inputs": [
+        {
+          "member": "ornament-batch-27/18/00_source.jpg",
+          "sha256": "0a8cc4724cb0feeba36048478aa31c2964ae8ff9e0084a84f3fadd6f4ee3fa9f",
+          "original_dimensions": [
+            725,
+            966
+          ],
+          "original_mode": "RGB",
+          "stage": "Source",
+          "actual_transparency": false
+        },
+        {
+          "member": "ornament-batch-27/18/01_completed_cutout.png",
+          "sha256": "16569a4feb56e7adc1388cd72a53d338f7c7e358a1e0b3f6b34e072ed3464b28",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "stage": "Cutout",
+          "actual_transparency": true
+        },
+        {
+          "member": "ornament-batch-27/18/02_soft_reference.png",
+          "sha256": "e81aa3130ed9cc6402de98c7111ffd2ba33abb49645c62e7fef0aeb30b0dd3aa",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGBA",
+          "stage": "Soft reference",
+          "actual_transparency": true
+        },
+        {
+          "member": "ornament-batch-27/18/03_white_motif_mask.png",
+          "sha256": "51aaf3c0d55b8bca1b75067ba7251c3a1ee4a6e3f0cd8cbe56bdc2a2e26cb88a",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGB",
+          "stage": "Motif mask",
+          "actual_transparency": false
+        },
+        {
+          "member": "ornament-batch-27/18/04_continuous_height.png",
+          "sha256": "38b8a86e939d0e0767f373204bf63eae9e8fc1f7e8e9b6ba0749d7610af0dab7",
+          "original_dimensions": [
+            1024,
+            1536
+          ],
+          "original_mode": "RGB",
+          "stage": "Height",
+          "actual_transparency": false
+        }
+      ],
+      "sha256": "e92e1240feef31b6eab43046efe536c6637ea63e5ccdf3a2148aed80b5e450dc",
+      "bytes": 236164
+    }
+  ]
+}
